@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "name": "author"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "user": {
+      "unique": true,
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "author"
+    },
+    "blogs": {
+      "via": "authors",
+      "collection": "blog"
+    },
+    "posts": {
+      "via": "author",
+      "collection": "post"
+    }
+  }
+}
