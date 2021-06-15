@@ -24,13 +24,19 @@
 </script>
 
 <script>
+  import Card from "$lib/components/Card.svelte";
+  import Icon, { rocket } from "$lib/components/Icon.svelte";
+
   export let blogs;
 </script>
 
-{#each blogs as blog}
-  {blog.title}
-  <a href="blogs/{blog.id}">a</a>
-{/each}
+<div
+  class="container grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 text-center"
+>
+  {#each blogs as blog}
+    <Card {blog} />
+  {/each}
+</div>
 
 <!-- markup (zero or more items) goes here -->
 <style>
