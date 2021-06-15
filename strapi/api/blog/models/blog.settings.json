@@ -2,12 +2,13 @@
   "kind": "collectionType",
   "collectionName": "blogs",
   "info": {
-    "name": "blog"
+    "name": "blog",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -33,6 +34,9 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
