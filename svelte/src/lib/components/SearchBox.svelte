@@ -20,21 +20,23 @@
     />
 </div>
 
-<section>
+
+<div class="container p-2 mx-auto">
+
     {#each result as { item }}
-        <div class="p-10 shadow-md ">
-            <div class="text-md">
-                <a href={item.url}>
-                    {item.url}
-                </a>
-            </div>
-            <h1 class=" text-lg font-bold">
-                {item.title}
-            </h1>
-            {item.content}
+    <div class="p-10 shadow-md ">
+        <div class="text-md">
+            <a href={item.url}>
+                {item.url}
+            </a>
         </div>
+        <h1 class=" text-lg font-bold">
+            {item.title}
+        </h1>
+        {item.content}
+    </div>
     {/each}
-</section>
+</div>
 
 <!-- markup (zero or more items) goes here -->
 <style>

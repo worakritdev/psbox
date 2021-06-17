@@ -1,7 +1,10 @@
-<nav class="w-full text-center font-bold text-xl">
-    <ul class="space-x-6">
-        <a href=".">Home</a>
-        <a href="blogs">Blogs</a>
-        <a href="profile">Profile</a>
-    </ul>
-</nav>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-chip color="primary" mode="ios" outline="true">
+        <ion-label>Pbox</ion-label>
+        <ion-icon name="cube" />
+      </ion-chip>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

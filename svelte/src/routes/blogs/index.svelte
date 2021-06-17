@@ -28,6 +28,7 @@
   import Icon, { rocket } from "$lib/components/Icon.svelte";
 
   export let blogs;
+  console.log(blogs);
 </script>
 
 <div
