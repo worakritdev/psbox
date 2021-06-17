@@ -20,11 +20,17 @@
       {#each item as item}
         <ion-item>
           <ion-label position="floating">{item}</ion-label>
-          <ion-input type="text" name={item} id={item} placeholder={item} />
+          <ion-input
+            type="text"
+            name={item}
+            id={item}
+            placeholder={item}
+            required
+          />
         </ion-item>
       {/each}
 
-      <button type="submit">Create</button>
+      <button type="submit" class="btn btn-primary">Create</button>
     </form>
   </ion-card-content>
 </ion-card>
