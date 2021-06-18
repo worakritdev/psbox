@@ -1,31 +1,21 @@
-<script>
-    import IonSplit from "../lib/templates/IonSplit.svelte";
 
-    import "../app.postcss";
-    import {
-        home,
-        board,
-        box,
-        rocket,
-        user,
-    } from "$lib/components/Icon.svelte";
-    import Nav from "$lib/components/Nav.svelte";
-    import Header from "$lib/components/Header.svelte";
-    import SideMenu from "$lib/layouts/SideMenu.svelte";
-</script>
+<div class="ion-page">
 
-<!-- markup (zero or more items) goes here -->
-
-<body>
-    <Header></Header>
-    <div class="contianer">
-        <SideMenu />
-        <div class="ml-14 md:ml-64">
-            <slot><!-- optional fallback --></slot>
-        </div>
-    </div>
-</body>
-
-<style>
-    /* your styles go here */
-</style>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Header</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    
+    
+    <ion-content>
+        
+        <slot><!-- optional fallback --></slot>
+    </ion-content>
+    
+    <ion-footer>
+        <ion-toolbar>
+            <ion-title>Footer</ion-title>
+        </ion-toolbar>
+    </ion-footer>
+</div>
