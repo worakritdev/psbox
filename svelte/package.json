@@ -6,7 +6,8 @@
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"jit": "npx tailwindcss -o static/tailwind.css --watch --jit --purge ./src/**/*.svelte"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
@@ -17,7 +18,7 @@
 		"svelte": "^3.34.0",
 		"svelte-check": "^2.0.0",
 		"svelte-preprocess": "^4.7.3",
-		"tailwindcss": "^2.1.1",
+		"tailwindcss": "^2.2.2",
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0"
 	},

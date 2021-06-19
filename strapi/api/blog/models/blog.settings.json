@@ -37,6 +37,11 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "chat": {
+      "type": "component",
+      "repeatable": true,
+      "component": "chat.chat"
     }
   }
 }

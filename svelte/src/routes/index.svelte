@@ -1,9 +1,6 @@
-<script>
-    // your script goes here
-</script>
+<!-- src/routes/index.svelte -->
+<svelte:head>
+	<title>Welcome</title>
+</svelte:head>
 
-<style>
-    /* your styles go here */
-</style>
-
-<!-- markup (zero or more items) goes here -->
+<h1>Hello and welcome to my site!</h1>

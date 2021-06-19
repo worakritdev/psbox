@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_comment_comments",
+  "info": {
+    "name": "comment",
+    "icon": "comment-alt"
+  },
+  "options": {},
+  "attributes": {
+    "comment": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "model": "author"
+    }
+  }
+}

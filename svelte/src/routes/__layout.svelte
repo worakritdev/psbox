@@ -1,21 +1,12 @@
+<script>
 
-<div class="ion-page">
+  import Header from '../lib/components/Header.svelte';
+</script>
 
-    <ion-header>
-        <ion-toolbar>
-            <ion-title>Header</ion-title>
-        </ion-toolbar>
-    </ion-header>
-    
-    
-    <ion-content>
-        
-        <slot><!-- optional fallback --></slot>
-    </ion-content>
-    
-    <ion-footer>
-        <ion-toolbar>
-            <ion-title>Footer</ion-title>
-        </ion-toolbar>
-    </ion-footer>
-</div>
+<body>
+  <Header></Header>
+  <div class="2xl:container">
+
+    <slot><!-- optional fallback --></slot>
+  </div>
+</body>
