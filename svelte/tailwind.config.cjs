@@ -1,7 +1,9 @@
 module.exports = {
 	mode: "jit",
+	// These paths are just examples, customize them to match your project structure
 	purge: [
-		"./src/**/*.{html,js,svelte,ts}",
+	  './public/**/*.html',
+	  './src/**/*.{js,jsx,ts,tsx,svelte}',
 	],
 	theme: {
 		extend: {},
