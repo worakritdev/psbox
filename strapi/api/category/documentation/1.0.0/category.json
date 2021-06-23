@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/posts": {
+    "/categories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Post"
+                    "$ref": "#/components/schemas/Category"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
         }
       }
     },
-    "/posts/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "parameters": []
       }
     },
-    "/posts/{id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Category"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Post": {
+      "Category": {
         "required": [
           "id"
         ],
@@ -522,57 +522,51 @@
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "content": {
-            "type": "string"
-          },
-          "author": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "bio": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "blogs": {
-                "type": "array",
-                "items": {
+          "blogs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "authors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "image": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "posts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "avatar": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
-          },
-          "slug": {
-            "type": "uid"
           },
           "published_at": {
             "type": "string",
@@ -580,19 +574,16 @@
           }
         }
       },
-      "NewPost": {
+      "NewCategory": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "content": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
+          "blogs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -610,7 +601,7 @@
   },
   "tags": [
     {
-      "name": "Post"
+      "name": "Category"
     }
   ]
 }

@@ -19,8 +19,8 @@
       "type": "richtext"
     },
     "author": {
-      "model": "author",
-      "via": "posts"
+      "via": "posts",
+      "model": "author"
     },
     "slug": {
       "type": "uid",

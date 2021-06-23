@@ -559,6 +559,9 @@
                     "type": "string"
                   }
                 },
+                "avatar": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -641,15 +644,32 @@
           "content": {
             "type": "string"
           },
-          "chat": {
+          "categories": {
             "type": "array",
             "items": {
-              "type": "object",
               "required": [
                 "id"
               ],
               "properties": {
                 "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "blogs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
               }
@@ -674,18 +694,10 @@
           "content": {
             "type": "string"
           },
-          "chat": {
+          "categories": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                }
-              }
+              "type": "string"
             }
           },
           "created_by": {

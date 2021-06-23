@@ -27,6 +27,7 @@
   export let article;
   const { title, description, authors, comments, likes, url, id, content } =
     article;
+    let qa,docs,contat,relation;
 </script>
 
 <div class="grid grid-cols-1 text-center">
@@ -42,12 +43,11 @@
       {url}
     </a>
   </h2>
-  <iframe src={url} frameborder="0"></iframe>
   <p>
     {content}
     {authors}
   </p>
-  <ion-segment value="qa" onIonChange="segmentChanged($event)" scrollable >
+  <ion-segment value="qa" onIonChange="segmentChanged($event)" scrollable>
     <ion-segment-button value="qa">
       <ion-label>ถาม-ตอบ</ion-label>
     </ion-segment-button>

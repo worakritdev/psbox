@@ -19,8 +19,8 @@
       "type": "string"
     },
     "authors": {
-      "collection": "author",
       "via": "blogs",
+      "collection": "author",
       "dominant": true
     },
     "image": {
@@ -38,10 +38,9 @@
     "content": {
       "type": "richtext"
     },
-    "chat": {
-      "type": "component",
-      "repeatable": true,
-      "component": "chat.chat"
+    "categories": {
+      "via": "blogs",
+      "collection": "category"
     }
   }
 }
