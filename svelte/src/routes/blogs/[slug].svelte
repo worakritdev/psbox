@@ -1,6 +1,4 @@
 <script context="module">
-  import { API } from "$lib/Env";
-
   /**
    * @type {import('@sveltejs/kit').Load}
    */
@@ -24,10 +22,34 @@
 </script>
 
 <script>
+  import { API } from "$lib/Env";
+
   export let article;
   const { title, description, authors, comments, likes, url, id, content } =
     article;
-    let qa,docs,contat,relation;
+  let qa = [],
+    docs,
+    contat,
+    relation,
+    comment,
+    selected = "";
+  function handleChange() {}
+  function newComment() {}
+  const data = [
+    { name: "qa", data: ["test"] },
+    { name: "comment", comments: [] },
+    { name: "docs", docs: [] },
+  ];
+
+  let total = data.flat();
+
+  const items = data.map((item) => {
+    return item;
+  });
+
+  $: findItem = data.find((item) => {
+    return item.name === selected;
+  });
 </script>
 
 <div class="grid grid-cols-1 text-center">
@@ -47,21 +69,35 @@
     {content}
     {authors}
   </p>
-  <ion-segment value="qa" onIonChange="segmentChanged($event)" scrollable>
-    <ion-segment-button value="qa">
-      <ion-label>ถาม-ตอบ</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="docs">
-      <ion-label>คู่มือ</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="contact">
-      <ion-label>ติดต่อ</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="relation">
-      <ion-label>เกี่ยวข้อง</ion-label>
-    </ion-segment-button>
-  </ion-segment>
 </div>
+{#each data as t}
+{JSON.stringify(t)}
+{/each}
+<ion-segment on:click={(ev) => (selected = ev.target.value)}>
+  <ion-segment-button value="comment">
+    <ion-label>Comments</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="qa">
+    <ion-label>Q/A</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="docs">
+    <ion-label>Docs</ion-label>
+  </ion-segment-button>
+</ion-segment>
+{selected}
+{JSON.stringify(findItem)}
+<form on:submit|preventDefault={newComment}>
+  <input
+    type="text"
+    bind:value={comment}
+    class="bg-indigo-300"
+    on:submit={(ev) => {
+      qa = [...qa, comment];
+    }}
+  />
+  <button type="submit">Add</button>
+</form>
+
 
 <!-- markup (zero or more items) goes here -->
 <style>

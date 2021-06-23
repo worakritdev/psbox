@@ -1,0 +1,14 @@
+{
+  "collectionName": "boxes",
+  "info": {
+    "name": "box",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {}
+}

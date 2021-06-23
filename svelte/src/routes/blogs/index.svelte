@@ -30,7 +30,7 @@
 </script>
 
 
-<div class="grid lg:grid-cols-3 gap-5 m-4 md:grid-cols-2 grid-cols-1 ">
+<div class="grid grid-row-3  lg:grid-cols-3 gap-5 m-4 md:grid-cols-2 grid-cols-1 ">
 
     {#each articles as article}
     <!-- content here -->
